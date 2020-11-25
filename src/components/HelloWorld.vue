@@ -4,15 +4,7 @@
     <button @click="stopload()">stop</button>
     <p>every {{ time }}s</p>
   </div>
-  <div
-    style="
-      width: 500px;
-      text-align: center;
-      margin-left: 10%;
-      margin-left: 5%;
-      margin-right: 5%;
-    "
-  >
+  <div class="gitInfoText">
     {{ gitInfoText }}
   </div>
 </template>

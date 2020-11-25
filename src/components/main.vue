@@ -7,58 +7,57 @@
   </div>
 </template>
 
-
 <script>
-import axios from "axios";
+import axios from 'axios'
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   props: {
     msg: String,
-    time: Number,
+    time: Number
   },
-  data() {
+  data () {
     return {
       gitInfo: null,
-      gitInfoText: "",
-      open: false,
-    };
+      gitInfoText: '',
+      open: false
+    }
   },
-  created() {
-    var that = this;
-    console.log("time", that.time);
+  created () {
+    var that = this
+    console.log('time', that.time)
 
     setInterval(function () {
       if (!that.open) {
-        that.fresh();
+        that.fresh()
       }
-    }, that.time);
+    }, that.time)
   },
   methods: {
-    stopload() {
-      this.open = true;
+    stopload () {
+      this.open = true
     },
-    fresh() {
-      var url = "https://api.github.com";
-      var that = this;
+    fresh () {
+      var url = 'https://api.github.com'
+      var that = this
 
       axios
         .get(url, {
           // 还可以直接把参数拼接在url后边
-          params: {},
+          params: {}
         })
         .then(function (res) {
-          console.log("res", res);
-          that.gitInfo = res.data;
+          console.log('res', res)
+          that.gitInfo = res.data
 
-          that.gitInfoText = JSON.stringify(that.gitInfo);
-          console.log("res2", that.gitInfoText);
+          that.gitInfoText = JSON.stringify(that.gitInfo)
+          console.log('res2', that.gitInfoText)
         })
         .catch(function (error) {
-          console.log(error);
-        });
-    },
-  },
-};
+          console.log(error)
+        })
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
