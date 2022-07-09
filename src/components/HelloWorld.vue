@@ -31,12 +31,12 @@ export default {
     var that = this;
     console.log("time", that.time);
 
-    setInterval(function () {
-      if (!that.open) {
-        that.fresh();
-        console.log("goon");
-      }
-    }, that.time);
+    // setInterval(function () {
+    //   if (!that.open) {
+    //     that.fresh();
+    //     console.log("goon");
+    //   }
+    // }, that.time);
   },
   methods: {
     stopload() {
