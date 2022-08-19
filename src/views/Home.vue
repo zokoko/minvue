@@ -13,6 +13,21 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      temptxt: 'hello',
+    };
+  },
+  created() {
+    var that = this;
+    console.log("temptxt", that.temptxt);
+  },
+  mounted(){},
+  methods: {
+    test() {
+      
+    },
   }
 }
 </script>
