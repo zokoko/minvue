@@ -1,4 +1,4 @@
-# vue4-mock-unit-test
+# 简化版vue4-mock-unit-test
 
 ## Project setup
 ```
