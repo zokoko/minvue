@@ -7,30 +7,30 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    HelloWorld,
+    HelloWorld
   },
-  data() {
+  data () {
     return {
-      temptxt: "hello",
-    };
+      temptxt: 'hello'
+    }
   },
   computed: {
     count: function () {
-      return this.$store._state.data.module1.count;
-    },
+      return this.$store._state.data.module1.count
+    }
   },
-  created() {
-    var that = this;
-    console.log("temptxt", that.count);
+  created () {
+    var that = this
+    console.log('temptxt', that.count)
   },
-  mounted() {},
+  mounted () {},
   methods: {
-    test() {},
-  },
-};
+    test () {}
+  }
+}
 </script>

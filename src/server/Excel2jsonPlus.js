@@ -8,8 +8,6 @@
 const xlsx = require('node-xlsx')
 const fs = require('fs')
 
-
-
 function excel2json (excelName, jsonName) {
   // 读取excel文件
   const sheets = xlsx.parse('./' + excelName)

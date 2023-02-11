@@ -2,7 +2,6 @@ import { mount } from '@vue/test-utils'
 import HelloWorld from '@/components/HelloWorld.vue'
 
 describe('HelloWorld.vue', () => {
-
   const msg = 'new message'
 
   const wrapper0 = mount(HelloWorld, {
@@ -12,9 +11,7 @@ describe('HelloWorld.vue', () => {
   })
 
   it('renders props.msg when passed', () => {
-
     expect(wrapper0.text()).toMatch(msg)
-
   })
 
   const wrapper = mount(HelloWorld)
@@ -32,22 +29,13 @@ describe('HelloWorld.vue', () => {
         time
       }
     })
-  
+
     await wrapper.setProps({ time: 3000 })
-  
+
     expect(wrapper.vm.time).toBe(3000)
   })
-
 
   it('gitInfoText int', () => {
     expect(wrapper.vm.gitInfoText).toBe('')
   })
-
-
-  
-  
-  
-
-  
-
 })
