@@ -21,3 +21,5 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+src/server/nodeServer/data.json
+src/server/nodeServer/node/data.json

@@ -3,6 +3,7 @@
     666
     <h1>{{ count }}</h1>
     <button @click="add">点击</button>
+    <button @click="getNodeRes">getNodeRes</button>
   </div>
   <div id="table"></div>
 </template>
