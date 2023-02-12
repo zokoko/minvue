@@ -9,6 +9,9 @@
 
 <script>
 import globalservices from '@/services/globalservices'
+// const { exec } = require('child_process')
+import { exec } from 'child_process'
+
 export default {
   name: 'Stock',
   data() {
@@ -25,9 +28,32 @@ export default {
   created() {
     var that = this
     console.log('temptxt', that.count)
+    // 调用Node.js命令 'node ./node/test2.js'
+    // exec('node test2.js', (error, stdout, stderr) => {
+    //   if (error) {
+    //     console.error(`执行出错: ${error}`)
+    //     return
+    //   }
+    //   console.log(`输出结果: ${stdout}`)
+    // })
   },
-  mounted() {},
+  mounted() {
+    this.getNodeRes()
+  },
   methods: {
+    getNodeRes() {
+      const params = {
+        page: 1,
+        num: 20,
+        sort: 'changepercent',
+        order: '医疗',
+        _: 1570380675094
+      }
+
+      globalservices.getNodeRes(params).then((res) => {
+        console.log('getNodeRes', res)
+      })
+    },
     add: function () {
       console.log(this)
       this.$store.dispatch('module1/add')
@@ -48,6 +74,7 @@ export default {
         'User-Agent':
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299'
       }
+
       globalservices
         .getStock(params, headers)
         .then((res) => {
