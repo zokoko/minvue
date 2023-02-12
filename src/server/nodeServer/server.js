@@ -23,10 +23,28 @@ app.get('/api', (req, res) => {
 });
 
 app.post('/getNodeRes', (req, res) => {
+  testModule.handleFile(res, req.body)
+
+
+
+  // let body = '';
+  // req.on('data', chunk => {
+  //   body += chunk.toString();
+  // });
+  // console.log(body);
+  // req.on('end', () => {
+  //   console.log(body);
+
+
+  // });
+
+  // console.log(bodyParser.json());
   // const result = handleFile(req.body);
   // const result = testModule.handleFile(res);  // 调用test.js中的handleFile函数
   // res.json(result);
-  res = testModule.handleFile(res)
+  // res = testModule.handleFile(res)
+
+
 });
 
 app.listen(3000, () => {

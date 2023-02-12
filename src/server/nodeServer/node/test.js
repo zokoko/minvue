@@ -2,7 +2,7 @@
 const { spawn } = require('child_process');
 const fs = require('fs');
 
-function handleFile (res) {
+function handleFile (res, body) {
   // 处理文件逻辑 1
   const child = spawn('node', ['node/generate-json.js'], { stdio: 'inherit' });
   child.on('exit', (code) => {
@@ -11,7 +11,13 @@ function handleFile (res) {
       return res.status(500).send('生成JSON文件失败');
     }
     const data = fs.readFileSync('node/data.json', 'utf8');
-    res.send(JSON.parse(data));
+
+    const params = {
+      data: JSON.parse(data),
+      body: body
+    }
+    res.send(params);
+    // res.send(JSON.parse(params));
   });
 
   return res;
