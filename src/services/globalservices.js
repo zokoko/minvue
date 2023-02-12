@@ -1,8 +1,9 @@
 import httpservices from '@/services/httpservices'
+import urls from '../configs/urls'
 
 export default {
-  getUser (url, params, headers) {
-    return httpservices.get(url, params, headers)
+  getStock (params, headers) {
+    return httpservices.get(urls.getStock, params, headers)
   },
 
   updateUser (id, data) {
